@@ -1,7 +1,13 @@
-API_ID=17075103 # get this value from my.telegram.org
-API_HASH=097920d1b5cd9c2d417c60ce680b9c43 # get this value from my.telegram.org
-BOT_TOKEN=5649721635:AAELHufFHxTHHC5DOmO11-WRRdp_QcY4qGA # get this value from @Botfather
-MONGO_DB_URI=mongodb+srv://ion:ion@cluster0.m5ylj7l.mongodb.net/?retryWrites=true&w=majority # get this value from mongodb.com
-LOG_GROUP_ID=-1001667736274 # get this value from in your log group 
-MUSIC_BOT_NAME=KAZU MUSIC # your music bot name 
-STRING_SESSION=BQB8VySFu3f8p_hHaIuBrGGqOES2W-4B7qt8snyDio-RCqVdEgSGhhiCEePVoY1KTsQsu-cWRNdaMtww57g1F7pPvUJ70jUDkn6sDMWzVTCwGZUi4I3_51jbVBwEHjYBaUwAH34rflVjXbbXbC9etC6mgBFhyNk8FBHXbrS7vJ1hT6zGps4F-51SI3_clTxciyVnSqhtHhOwNfT6DBNg-5kMlEp_G3zkplubrmcmBIJW7-afwMI_Yk-2fXPCY7hO9aPNHi82AYIC30EjimrmpfWMnbND-st0-42uw8hv0iHSciKt35zdsZUrlS80taroBJoFaS-73Xf7vno26FII5vbrAAAAAS3IM90A # get this value from @yukkistringbot
+STRING_SESSION1 = BQCFRpc3qF2qu8ctJ91OYeuauEco7-cRdvSWO_4LiGFOGdmZTO3oOCBpNu9ZVKIUivhx4jBpSMIrZnDUCCrbe-fQiFl4xdtP5SZyctyMe_4tRYXm7Ph5T2mB-BjDfXu-XshcZ44fLJDR1JNYEezDO458wDGKSWKQ2KXDMP7kcBsvbUjgnseCLs7d3wvUD939UYzxGJfcid4S6uQjq-tterNXfR8u5gbOWF4_xmJ0Ea-me08ESJMehiqI0___HeXlYEyhv3K_c1JZDe_mB2wsDvzUucPNAkFUA67zvMpNXGkFi0NhImIK5XbQeR2G9HoUrrN7vmoOSc5bfgvqj22izGbAPB1IrgA
+API_ID = 16510278
+API_HASH = 15e66907e1d030b9f203859fc4c54845
+BOT_TOKEN = 5742385942:AAHf6q57JkKv9QrOm_lPD3NkR7Tt7e3lsao
+SUDO_USERS = 5063062493
+MONGO_DB_URI = mongodb+srv://ion:ion@cluster0.m5ylj7l.mongodb.net/?retryWrites=true&w=majority
+LOG_GROUP_ID = -1001667736274
+MUSIC_BOT_NAME = ION MUSIC
+OWNER_ID = 1008552110
+DURATION_LIMIT = 90
+SUPPORT_CHANNEL = https://t.me/mazipace
+SUPPORT_GROUP = https://t.me/punyaionnibos
+ASSISTANT_PREFIX = !
