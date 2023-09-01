@@ -16,14 +16,11 @@ def lanuages_keyboard(_):
     keyboard = InlineKeyboard(row_width=2)
     keyboard.row(
         InlineKeyboardButton(
-            text="🇦🇺 ᴇɴɢʟɪsʜ 🇦🇺",
-            callback_data=f"languages:en",
-        ),
+            text="🇦🇺 ᴇɴɢʟɪsʜ 🇦🇺", callback_data="languages:en"
+        )
     )
     keyboard.row(
-        InlineKeyboardButton(
-            text=_["CLOSE_BUTTON"], callback_data=f"close"
-        ),
+        InlineKeyboardButton(text=_["CLOSE_BUTTON"], callback_data="close")
     )
     return keyboard
 
