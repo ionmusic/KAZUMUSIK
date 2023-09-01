@@ -179,9 +179,7 @@ async def without_Admin_rights(client, CallbackQuery, _):
         except:
             pass
         sta = None
-        cle = None
-        if await is_cleanmode_on(CallbackQuery.message.chat.id):
-            cle = True
+        cle = True if await is_cleanmode_on(CallbackQuery.message.chat.id) else None
         if await is_commanddelete_on(CallbackQuery.message.chat.id):
             sta = True
         buttons = cleanmode_settings_markup(
@@ -207,22 +205,13 @@ async def without_Admin_rights(client, CallbackQuery, _):
         except:
             pass
         playmode = await get_playmode(CallbackQuery.message.chat.id)
-        if playmode == "Direct":
-            Direct = True
-        else:
-            Direct = None
+        Direct = True if playmode == "Direct" else None
         is_non_admin = await is_nonadmin_chat(
             CallbackQuery.message.chat.id
         )
-        if not is_non_admin:
-            Group = True
-        else:
-            Group = None
+        Group = True if not is_non_admin else None
         playty = await get_playtype(CallbackQuery.message.chat.id)
-        if playty == "Everyone":
-            Playtype = None
-        else:
-            Playtype = True
+        Playtype = None if playty == "Everyone" else True
         buttons = playmode_users_markup(_, Direct, Group, Playtype)
     if command == "AU":
         try:
@@ -232,10 +221,7 @@ async def without_Admin_rights(client, CallbackQuery, _):
         is_non_admin = await is_nonadmin_chat(
             CallbackQuery.message.chat.id
         )
-        if not is_non_admin:
-            buttons = auth_users_markup(_, True)
-        else:
-            buttons = auth_users_markup(_)
+        buttons = auth_users_markup(_) if is_non_admin else auth_users_markup(_, True)
     try:
         return await CallbackQuery.edit_message_reply_markup(
             reply_markup=InlineKeyboardMarkup(buttons)
@@ -313,15 +299,9 @@ async def playmode_ans(client, CallbackQuery, _):
             await remove_nonadmin_chat(CallbackQuery.message.chat.id)
             Group = True
         playmode = await get_playmode(CallbackQuery.message.chat.id)
-        if playmode == "Direct":
-            Direct = True
-        else:
-            Direct = None
+        Direct = True if playmode == "Direct" else None
         playty = await get_playtype(CallbackQuery.message.chat.id)
-        if playty == "Everyone":
-            Playtype = None
-        else:
-            Playtype = True
+        Playtype = None if playty == "Everyone" else True
         buttons = playmode_users_markup(_, Direct, Group, Playtype)
     if command == "MODECHANGE":
         try:
@@ -342,15 +322,9 @@ async def playmode_ans(client, CallbackQuery, _):
         is_non_admin = await is_nonadmin_chat(
             CallbackQuery.message.chat.id
         )
-        if not is_non_admin:
-            Group = True
-        else:
-            Group = None
+        Group = True if not is_non_admin else None
         playty = await get_playtype(CallbackQuery.message.chat.id)
-        if playty == "Everyone":
-            Playtype = False
-        else:
-            Playtype = True
+        Playtype = playty != "Everyone"
         buttons = playmode_users_markup(_, Direct, Group, Playtype)
     if command == "PLAYTYPECHANGE":
         try:
@@ -367,17 +341,11 @@ async def playmode_ans(client, CallbackQuery, _):
             )
             Playtype = True
         playmode = await get_playmode(CallbackQuery.message.chat.id)
-        if playmode == "Direct":
-            Direct = True
-        else:
-            Direct = None
+        Direct = True if playmode == "Direct" else None
         is_non_admin = await is_nonadmin_chat(
             CallbackQuery.message.chat.id
         )
-        if not is_non_admin:
-            Group = True
-        else:
-            Group = None
+        Group = True if not is_non_admin else None
         buttons = playmode_users_markup(_, Direct, Group, Playtype)
     try:
         return await CallbackQuery.edit_message_reply_markup(
@@ -436,11 +404,10 @@ async def authusers_mar(client, CallbackQuery, _):
                 [
                     [
                         InlineKeyboardButton(
-                            text=_["BACK_BUTTON"], callback_data=f"AU"
+                            text=_["BACK_BUTTON"], callback_data="AU"
                         ),
                         InlineKeyboardButton(
-                            text=_["CLOSE_BUTTON"],
-                            callback_data=f"close",
+                            text=_["CLOSE_BUTTON"], callback_data="close"
                         ),
                     ]
                 ]
@@ -506,10 +473,8 @@ async def cleanmode_mark(client, CallbackQuery, _):
             reply_markup=InlineKeyboardMarkup(buttons)
         )
     if command == "COMMANDELMODE":
-        cle = None
         sta = None
-        if await is_cleanmode_on(CallbackQuery.message.chat.id):
-            cle = True
+        cle = True if await is_cleanmode_on(CallbackQuery.message.chat.id) else None
         if await is_commanddelete_on(CallbackQuery.message.chat.id):
             await commanddelete_off(CallbackQuery.message.chat.id)
         else:

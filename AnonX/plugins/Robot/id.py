@@ -20,8 +20,7 @@ def get_id(msg: Message):
             # "venue",
             "sticker",
         ):
-            obj = getattr(msg, message_type)
-            if obj:
+            if obj := getattr(msg, message_type):
                 setattr(obj, "message_type", message_type)
                 return obj
 
